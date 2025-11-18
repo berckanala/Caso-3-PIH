@@ -1,0 +1,411 @@
+\documentclass{article} % Define la clase del documento, en este caso, un artículo
+\usepackage[letterpaper,margin=3cm]{geometry} % Configura el tamaño del papel y los márgenes del documento
+\usepackage{graphicx} % Permite la inserción de imágenes
+\usepackage[spanish]{babel}% Activar esta configuración para informes en español, ajusta el idioma del documento
+\usepackage[usenames]{color} % Permite el uso de colores definidos por nombre en el documento
+\usepackage{hyperref} % Habilita enlaces y referencias dentro del documento
+\hypersetup{colorlinks=true, linkcolor = black, citecolor= black} % Configura el color de los enlaces y citas
+\usepackage{booktabs} % Proporciona comandos para crear tablas de alta calidad
+\usepackage{natbib} % Permite el uso de citas y referencias bibliográficas con diferentes estilos
+\usepackage{tikz} % Permite la creación de gráficos y diagramas vectoriales directamente en LaTeX
+\usepackage{float} % Para controlar la posición de los elementos flotantes, como imágenes, con la opción [H]
+\usepackage{diagbox} % Permite crear celdas con líneas diagonales en tablas
+\usepackage{listings} % Permite la inclusión y formateo de código fuente en el documento
+\usepackage{xcolor} % Paquete para definir y usar colores en el documento
+\usepackage{parskip} % Añade espacio entre párrafos en lugar de sangrías
+\usepackage{fancyhdr} % Permite personalizar encabezados y pies de página
+\usepackage{amsmath} % Proporciona una amplia variedad de entornos y comandos matemáticos
+
+\pagestyle{fancy} % Usa el estilo fancyhdr
+\fancyhf{} % Borra todos los encabezados y pies de página
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt} % Desactiva la línea horizontal predeterminada en el pie
+\setlength{\headheight}{2cm} % Ajusta la altura del encabezado para hacer espacio para la línea
+\fancyhead[L]{\raisebox{0.20cm}{\textbf{Proyecto de infraestructura hidráulica}}} % Añade el texto en la parte izquierda del encabezado, subiéndolo ligeramente
+\fancyhead[R]{\raisebox{0.1cm}{\includegraphics[width=0.25\linewidth]{LOGO_UNIVERSIDAD.jpg}}} % Añade la imagen en la parte derecha del encabezado y súbela un poco
+\fancyhead[C]{\rule{\textwidth}{0.6pt}} % Añade una línea horizontal superior centrada
+\fancyfoot[C]{\rule{\textwidth}{0.6pt}} % Añade una línea horizontal en el pie de página centrada
+\fancyfoot[R]{\raisebox{-1.5\baselineskip}{\thepage}} % Coloca el número de página a la derecha, con suficiente espacio debajo de la línea
+\geometry{top=3cm, bottom=2.5cm} % Ajusta los márgenes superior e inferior
+
+% Definición de colores al estilo Visual Studio Code
+\definecolor{codegreen}{rgb}{0.25,0.49,0.48} % Comentarios
+\definecolor{codegray}{rgb}{0.5,0.5,0.5} % Números y anotaciones
+\definecolor{codepurple}{rgb}{0.58,0,0.82} % Palabras clave
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92} % Color de fondo
+
+% Configuración del estilo de las celdas de código
+\lstset{
+    backgroundcolor=\color{backcolour},   % color de fondo; necesita que el paquete color o xcolor esté cargado
+    commentstyle=\color{codegreen},       % estilo de comentarios
+    keywordstyle=\color{codepurple},      % estilo de palabras clave
+    numberstyle=\tiny\color{codegray},    % estilo de los números de línea
+    stringstyle=\color{red},              % estilo de las cadenas de texto
+    basicstyle=\ttfamily\small,           % estilo del texto básico
+    breakatwhitespace=false,              % ajustes de líneas sólo en espacios en blanco
+    breaklines=true,                      % ajustar las líneas si son muy largas
+    captionpos=b,                         % posición de la leyenda (abajo)
+    keepspaces=true,                      % preserva los espacios en el texto; útil si se usa monoespaciado
+    numbers=left,                         % dónde poner los números de línea
+    numbersep=5pt,                        % qué tan lejos están los números de línea del código
+    showspaces=false,                     % mostrar espacios con subrayados particulares; reemplaza 'showstringspaces'
+    showstringspaces=false,               % subrayar los espacios dentro de las cadenas solo
+    showtabs=false,                       % mostrar tabulaciones en el código con subrayados particulares
+    tabsize=2,                            % tamaños de tabulación a 2 espacios
+    language=TeX,                         % lenguaje del código
+    morecomment=[l]\#,                    % reconocer # como inicio de comentario en Python
+    frame=single,                         % agregar un marco simple alrededor del código
+    rulecolor=\color{black}               % color del marco
+}
+
+\begin{document}
+%----------------------------------------------------------------------------------------
+%   PORTADA
+%Modificar desde aqui en adelante
+%----------------------------------------------------------------------------------------
+\begin{titlepage}%Inicio de la carátula, solo modificar los datos necesarios
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+\center 
+%----------------------------------------------------------------------------------------
+%	ENCABEZADO
+%----------------------------------------------------------------------------------------
+\includegraphics[width=10cm]{LOGO_UNIVERSIDAD.jpg}\\ % Si esta plantilla se copio correctamente, va a llevar la imagen del logo de la facultad.OBS: Es necesario incluir el paquete: graphicx
+\vspace{3cm}
+%----------------------------------------------------------------------------------------
+%	SECCION DEL TITULO
+%----------------------------------------------------------------------------------------
+\HRule \\[0.4cm]
+{ \huge \bfseries Caso 2}\\[0.4cm]
+{ \huge \bfseries Infraestructura en recursos hídricos}\\[0.4cm] % Titulo del documento
+{ \huge \bfseries Proyecto de Infraestructura Hidráulica}\\[0.4cm] % Titulo del documento
+\HRule \\[1.5cm]
+ \vspace{5cm}
+%----------------------------------------------------------------------------------------
+%	SECCION DEL AUTOR
+%----------------------------------------------------------------------------------------
+\begin{flushright}
+    { \textbf{Profesor:}\\
+    Oscar Loyola\\
+    \vspace{0.2cm}
+    \textbf{Alumnos:}\\
+    Bernardo Caprile Canala-Echevarría\\
+    Pedro Valenzuela Béjares\\
+    Francisco Zegers
+    \vspace{0.2cm}
+
+}
+\end{flushright}
+\vspace{1cm}
+%----------------------------------------------------------------------------------------
+%	SECCION DE LA FECHA
+%----------------------------------------------------------------------------------------
+{\large \textbf{\today}}\\[2cm] % El comando \today coloca la fecha del dia, y esto se actualiza con cada compilacion, en caso de querer tener una fecha estatica, reemplazar el \today por la fecha deseada
+\end{titlepage}
+%----------------------------------------------------------------------------------------
+%  INDICE
+%----------------------------------------------------------------------------------------
+\newpage
+\section*{Resumen Ejecutivo}
+
+\newpage
+\tableofcontents % Genera el índice automáticamente
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Introducción}
+
+
+\newpage
+
+\section{Marco Teórico}
+
+El diseño del sistema de impulsión para el transporte de agua recuperada desde 
+el Tranque Ovejería hacia la Planta de Procesos requiere la aplicación integrada 
+de principios de mecánica de fluidos, diseño de tuberías, selección de equipos de 
+impulsión y normas de ingeniería como ASME B31.4. A continuación, se presenta el 
+marco teórico utilizado para el modelamiento hidráulico y estructural del sistema.
+
+% -------------------------------------------------------------------------
+\subsection{Caudal y Velocidad de Flujo}
+
+El caudal total requerido para el sistema es:
+
+\[
+Q = 0.8\ \text{m}^3/\text{s}
+\]
+
+La velocidad media en una tubería de diámetro $D$ se determina mediante:
+
+\[
+V = \frac{Q}{A} = \frac{4Q}{\pi D^2}
+\]
+
+donde $A$ es el área transversal de la tubería.
+
+% -------------------------------------------------------------------------
+\subsection{Número de Reynolds}
+
+El régimen de flujo se caracteriza con el Número de Reynolds:
+
+\[
+Re = \frac{V D}{\nu}
+\]
+
+donde:
+\begin{itemize}
+\item $V$: velocidad media del fluido,
+\item $\nu$: viscosidad cinemática del agua.
+\end{itemize}
+
+% -------------------------------------------------------------------------
+\subsection{Factor de Fricción de Swamee--Jain}
+
+Para flujo turbulento, el factor de fricción de Darcy–Weisbach se obtiene con la 
+ecuación explícita de Swamee--Jain:
+
+\[
+f = \frac{0.25}{\left[ \log_{10}\left( \frac{\varepsilon}{3.7D} 
++ \frac{5.74}{Re^{0.9}} \right) \right]^2}
+\]
+
+donde:
+\begin{itemize}
+\item $\varepsilon$: rugosidad absoluta interna de la tubería,
+\item $D$: diámetro interno,
+\item $Re$: número de Reynolds.
+\end{itemize}
+
+% -------------------------------------------------------------------------
+\subsection{Pérdidas por Fricción en Tuberías}
+
+Las pérdidas por fricción de Darcy--Weisbach se determinan mediante:
+
+\[
+h_f = f \frac{L}{D} \frac{V^2}{2g}
+\]
+
+donde:
+\begin{itemize}
+\item $L$: longitud del tramo,
+\item $g$: aceleración de gravedad.
+\end{itemize}
+
+Las pérdidas menores se modelan como:
+
+\[
+h_{m} = K \frac{V^2}{2g}
+\]
+
+donde $K$ es el coeficiente equivalente de pérdidas locales.
+
+% -------------------------------------------------------------------------
+\subsection{Head Total Requerido (TDH)}
+
+El head dinámico total requerido para vencer desnivel y pérdidas es:
+
+\[
+H_{\text{total}} = H_{\text{estático}} + \sum h_f + \sum h_m
+\]
+
+donde:
+
+\[
+H_{\text{estático}} = z_{\text{final}} - z_{\text{inicial}}
+\]
+
+% -------------------------------------------------------------------------
+\subsection{Curva Característica de la Bomba}
+
+Cada bomba multietapa modelo Goulds 3600 presenta curvas digitizadas de:
+
+\[
+H(Q), \qquad \eta(Q), \qquad P(Q)
+\]
+
+Estas curvas se interpolaron linealmente entre puntos obtenidos del catálogo.
+
+El head proporcionado por $N$ bombas en serie es:
+
+\[
+H_{\text{serie}} = N_{\text{est}} \, H_b
+\]
+
+y el caudal por bomba operando en paralelo:
+
+\[
+Q_b = \frac{Q_{\text{total}}}{N_{\text{par}}}
+\]
+
+La potencia total instalada:
+
+\[
+P_{\text{total}} = N_{\text{par}} \, N_{\text{est}} \, P_b
+\]
+
+% -------------------------------------------------------------------------
+\subsection{Cálculo de NPSHr y NPSHa}
+
+El NPSH requerido proviene del catálogo:
+
+\[
+NPSH_{r} = f(Q)
+\]
+
+El NPSH disponible en succión se calcula como:
+
+\[
+NPSH_{a} = \frac{p_{\text{atm}}}{\rho g} + z_s - h_f - \frac{p_v}{\rho g}
+\]
+
+donde:
+\begin{itemize}
+\item $p_{\text{atm}}$: presión atmosférica,
+\item $p_v$: presión de vapor,
+\item $z_s$: cota del nivel libre del estanque.
+\end{itemize}
+
+La condición para evitar cavitación es:
+
+\[
+NPSH_a > NPSH_r
+\]
+
+% -------------------------------------------------------------------------
+\subsection{Golpe de Ariete (Estimación Simplificada)}
+
+Para un cierre rápido de válvula, la sobrepresión estimada:
+
+\[
+\Delta P = \rho a \Delta V
+\]
+
+donde:
+\begin{itemize}
+\item $a$: velocidad de propagación de onda (acero),
+\item $\Delta V$: cambio instantáneo en la velocidad.
+\end{itemize}
+
+El head equivalente del golpe de ariete:
+
+\[
+\Delta H = \frac{\Delta P}{\rho g}
+\]
+
+% -------------------------------------------------------------------------
+\subsection{Espesor Mínimo según ASME B31.4 (API 5L X65)}
+
+El esfuerzo circunferencial (hoop stress) para tuberías sometidas a presión interna:
+
+\[
+\sigma_h = \frac{P D}{2 t}
+\]
+
+La norma ASME B31.4 establece que:
+
+\[
+\sigma_h \le F_1 S_y
+\]
+
+por lo tanto, el espesor requerido es:
+
+\[
+t_{\text{req}} = \frac{P D}{2 F_1 S_y}
+\]
+
+donde:
+\begin{itemize}
+\item $P$: presión interna,
+\item $D$: diámetro exterior,
+\item $S_y$: límite de fluencia del acero X65,
+\item $F_1$: factor de diseño (0.72 para oleoductos).
+\end{itemize}
+
+La utilización de espesor:
+
+\[
+U_t = \frac{t_{\text{req}}}{t_{\text{adoptado}}}
+\]
+
+Y la utilización de esfuerzo:
+
+\[
+U_{\sigma} = \frac{\sigma_h}{F_1 S_y}
+\]
+
+% -------------------------------------------------------------------------
+\subsection{Dimensionamiento de Estanques de Amortiguación}
+
+El volumen requerido para un tiempo de autonomía $T$:
+
+\[
+V = Q \, T
+\]
+
+Asumiendo estanques cilíndricos verticales:
+
+\[
+V = \pi \frac{D_t^2}{4} H_t
+\]
+
+y despejando diámetro:
+
+\[
+D_t = \sqrt{\frac{4V}{\pi H_t}}
+\]
+
+donde $H_t$ es la altura útil adoptada del estanque.
+
+% -------------------------------------------------------------------------
+\subsection{Línea de Energía (EGL) y Línea Piezo–métrica (HGL)}
+
+En cada punto:
+
+\[
+E = z + \frac{p}{\rho g} + \frac{V^2}{2g}
+\]
+
+La línea de energía se construye acumulando head estático y pérdidas.
+
+Las estaciones de bombeo agregan head discreto:
+
+\[
+E_{\text{post-bomba}} = E_{\text{pre-bomba}} + H_b
+\]
+
+% -------------------------------------------------------------------------
+\subsection{Interpolación de Curvas del Fabricante}
+
+Para cada parámetro $y = H, \eta, P$, se utilizó interpolación lineal:
+
+\[
+y(Q) = y_i + (y_{i+1}-y_i)\frac{Q - Q_i}{Q_{i+1}-Q_i}
+\]
+
+con extrapolación lineal controlada fuera de rango.
+
+% -------------------------------------------------------------------------
+\subsection{Selección Óptima de Bombas}
+
+Se minimiza:
+
+\[
+P_{\text{total}}(N_{\text{par}}, N_{\text{est}})
+\]
+
+sujeto a:
+
+\[
+N_{\text{est}} H_b \ge H_{\text{total}}
+\]
+
+y
+
+\[
+Q_{\text{min}} \le Q_b \le Q_{\text{max}}
+\]
+
+obtenidos de la curva de la bomba.
+
+
+
+\end{document}
