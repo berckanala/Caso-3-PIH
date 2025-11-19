@@ -107,13 +107,36 @@
 \newpage
 \section*{Resumen Ejecutivo}
 
+La División Andina de Codelco enfrenta el desafío de mejorar la eficiencia en el uso del recurso hídrico, dado el alto consumo de agua en sus procesos y la limitada recirculación desde el Tranque Ovejería. Actualmente, el relave es conducido desde la planta de procesos hasta el tranque a lo largo de unos 60 km, donde una fracción importante del agua queda sin recuperar. En este contexto, el presente estudio aborda el diseño de un sistema de impulsión capaz de recircular 800 L/s de agua desde el Tranque Ovejería hasta la planta concentradora, utilizando el trazado existente de la canaleta de relaves y superando un desnivel cercano a 2154 m en condiciones de alta montaña.
+
+El trabajo se desarrolló mediante la caracterización del trazado y la definición de tramos con sus respectivas longitudes y diferencias de cota, sobre los cuales se modelaron las pérdidas de carga utilizando la ecuación de Darcy–Weisbach y un factor de fricción obtenido con la formulación de Swamee–Jain. A partir de estos resultados se agruparon los tramos en tres estaciones de bombeo en serie y se determinaron las alturas requeridas en cada una de ellas. Con estas alturas y el caudal de diseño se seleccionaron bombas multietapa Goulds 3600, definiendo el número de unidades en paralelo por estación en función de las curvas características de head, eficiencia y potencia. En paralelo, se realizó la verificación estructural de la tubería mediante criterios de tensión circunferencial basados en ASME B31.4, calculando espesores mínimos y comparándolos con espesores comerciales de tubería de acero.
+
+Los resultados indican que el sistema de impulsión propuesto, compuesto por tres estaciones de bombeo con alturas del orden de 937 m, 775 m y 559 m respectivamente, es capaz de transportar el caudal de 800 L/s manteniendo velocidades y números de Reynolds compatibles con un régimen turbulento plenamente desarrollado y con pérdidas por fricción moderadas en relación con el desnivel geométrico. La selección de bombas permite operar en rangos de eficiencia adecuados y con configuraciones de siete bombas en la Estación 1, cuatro en la Estación 2 y tres en la Estación 3. Desde el punto de vista estructural, los espesores adoptados de 32, 50 y 70 mm superan ampliamente los mínimos requeridos, con utilizaciones de esfuerzo muy por debajo de la tensión admisible del material, lo que asegura márgenes de seguridad holgados en todos los tramos de la conducción.
+
+En conjunto, el estudio demuestra que la implementación del sistema de impulsión es técnicamente viable y coherente con los criterios de operación continua, seguridad hidráulica y robustez estructural. La recirculación de 800 L/s desde el Tranque Ovejería hacia la planta de procesos contribuiría de manera significativa a reducir la demanda de agua fresca y a avanzar en los compromisos de sostenibilidad hídrica de la División Andina, quedando como líneas de desarrollo futuro el análisis detallado de transientes hidráulicos y la evaluación económica del proyecto.
+
+
 \newpage
 \tableofcontents % Genera el índice automáticamente
 \newpage
 %----------------------------------------------------------------------------------------
 
-\section*{Introducción}
+\section{Introducción}
 
+La División Andina de Codelco enfrenta actualmente un desafío relevante en materia de gestión hídrica, debido al alto consumo de agua asociado a sus procesos mineros y a la limitada recuperación del recurso utilizado. En el sistema existente, el relave producido en la planta concentradora es transportado a lo largo de aproximadamente 60 kilómetros hasta el Tranque Ovejería, donde una fracción importante del agua queda sin recircular, generando pérdidas operacionales y un uso ineficiente del recurso hídrico. Considerando el contexto de creciente escasez de agua en Chile y las exigencias ambientales y productivas de la industria minera, se vuelve necesario evaluar alternativas que permitan mejorar la eficiencia y sostenibilidad de las operaciones.
+
+Con este propósito, se plantea el diseño de un sistema de impulsión capaz de recircular un caudal de 800 litros por segundo desde el Tranque Ovejería hasta la planta concentradora, ubicada a casi 2900 metros sobre el nivel del mar. El proyecto considera utilizar el trazado existente de la canaleta de relaves, que incluye túneles y sectores de alta pendiente, permitiendo optimizar la longitud del recorrido y reducir interferencias constructivas. Asimismo, el diseño debe incorporar estaciones de bombeo en serie, tuberías de alta presión y bombas de la línea Goulds 3600, de manera de superar un desnivel acumulado superior a 2000 metros y asegurar una operación estable y continua.
+
+La presente entrega desarrolla el análisis necesario para evaluar la viabilidad hidráulica, operativa y técnica del sistema propuesto, estableciendo criterios de diseño, selección de equipos y estimaciones de potencia, con el objetivo de aportar una solución integral, eficiente y coherente con los lineamientos de sostenibilidad de la compañía.
+
+\newpage
+\section{Objetivos y Alcance}
+
+El presente proyecto tiene como objetivo general diseñar un sistema de impulsión capaz de transportar un caudal de 800 litros por segundo de agua recuperada desde el Tranque Ovejería hasta la planta concentradora de la División Andina. Esta solución busca mejorar la eficiencia hídrica de la operación minera mediante la recirculación del agua actualmente perdida en el tranque, contribuyendo a la reducción del consumo de agua fresca y al cumplimiento de los compromisos de sostenibilidad y uso responsable del recurso.
+
+Para alcanzar este objetivo, el trabajo contempla un conjunto de objetivos específicos orientados a definir los principales componentes técnicos del sistema. Entre ellos se encuentra la determinación del número y la ubicación de las estaciones de bombeo necesarias para superar el desnivel aproximado de 2154 metros entre ambos puntos, la selección del número de bombas en cada estación y su configuración operativa, la elección del diámetro y material de las tuberías, el cálculo de la potencia requerida para el transporte del caudal y la estimación de los volúmenes de acumulación en los estanques de regulación asociados a cada estación.
+
+El alcance del estudio incluye el análisis hidráulico del trazado existente de la canaleta de relaves, que será utilizado como corredor para la instalación de la tubería de impulsión, considerando los túneles, pendientes y restricciones propias de la topografía cordillerana. Además, se consideran criterios de operación continua, seguridad hidráulica y compatibilidad con la infraestructura minera existente, con el fin de garantizar que el sistema propuesto sea técnica y operativamente viable dentro de las condiciones exigentes de la zona de estudio.
 
 \newpage
 
@@ -406,6 +429,190 @@ Q_{\text{min}} \le Q_b \le Q_{\text{max}}
 
 obtenidos de la curva de la bomba.
 
+\newpage
+\section{Desarrollo}
+
+El desarrollo del proyecto se basó en la caracterización del trazado existente entre el Tranque Ovejería y la planta de procesos, determinando las longitudes y diferencias de cota de cada tramo. Con esta información se definió el caudal de diseño de 800 \, L/s y se seleccionó un diámetro preliminar para la conducción, a partir del cual se calcularon la velocidad del flujo, el número de Reynolds y el factor de fricción correspondiente.
+
+Posteriormente se modelaron las pérdidas de carga de cada tramo mediante la ecuación de Darcy–Weisbach, complementadas con pérdidas localizadas asociadas a codos y válvulas. La suma de las pérdidas y del desnivel geométrico permitió obtener la carga total requerida en cada uno de los tramos definidos.
+
+A partir de estas cargas se agruparon los tramos en tres estaciones de bombeo, ubicadas estratégicamente según la topografía del trazado. Para cada estación se determinó la altura total a vencer y, utilizando las curvas características de las bombas Goulds 3600, se seleccionó el número de bombas en paralelo que permite alcanzar el caudal y la altura requeridos con eficiencias adecuadas.
+
+En paralelo, se desarrolló la verificación estructural de la tubería. Con las presiones internas calculadas para cada estación y cada tramo, se evaluó la tensión circunferencial y se determinó el espesor mínimo requerido según los criterios de la normativa ASME. Luego se seleccionaron espesores comerciales superiores a los mínimos, verificando su utilización tanto en términos de espesor como de esfuerzo admisible del material.
+
+Finalmente, se integraron los resultados hidráulicos y estructurales, obteniendo la configuración definitiva del sistema: ubicación y altura de cada estación de bombeo, número de bombas por estación, diámetros y espesores de la tubería. Este proceso permitió establecer un diseño coherente y seguro para la recirculación de 800 \, L/s de agua desde el Tranque Ovejería hasta la planta concentradora.
+
+
+\newpage
+\section{Resultados}
+
+El análisis hidráulico y estructural del sistema de impulsión permitió caracterizar el comportamiento del flujo a lo largo del trazado, estimar las alturas parciales que deben ser vencidas por cada estación de bombeo y verificar la resistencia mecánica de la tubería frente a las presiones de operación. A continuación, se presentan los resultados obtenidos de manera integrada y consistente con el diseño final.
+
+\subsection*{Resultados hidráulicos por tramo}
+
+Para un caudal de 800 \, L/s, el diámetro seleccionado mantiene una velocidad media de \(V = 1{,}59 \, \text{m/s}\), con un número de Reynolds de \(Re \approx 1{,}27 \times 10^{6}\), lo que confirma un régimen turbulento plenamente desarrollado. En estas condiciones, el factor de fricción resulta prácticamente constante en toda la conducción, con un valor promedio de \(f = 0{,}0125\).
+
+La Tabla \ref{tab:tramos} detalla los resultados hidráulicos obtenidos para cada tramo del trazado:
+
+\begin{table}[h]
+    \centering
+    \caption{Resultados hidráulicos por tramo de la conducción.}
+    \label{tab:tramos}
+    \begin{tabular}{ccccccc}
+        \hline
+        id & \(L\) [m] & \(\Delta z\) [m] & Grupo & \(V\) [m/s] & \(Re\) [-] & \(h_{f}\) [m] \\
+        \hline
+        2--3 & 23000 & 845  & Est.1 & 1{,}59 & \(1{,}27\times10^{6}\) & 46{,}36 \\
+        3--4 & 2870  & 40   & Est.1 & 1{,}59 & \(1{,}27\times10^{6}\) & 5{,}79 \\
+        4--5 & 7840  & 617  & Est.2 & 1{,}59 & \(1{,}27\times10^{6}\) & 15{,}80 \\
+        5--6 & 8670  & 125  & Est.2 & 1{,}59 & \(1{,}27\times10^{6}\) & 17{,}48 \\
+        6--7 & 320   & -18  & Est.3 & 1{,}59 & \(1{,}27\times10^{6}\) & 0{,}65 \\
+        7--8 & 9900  & 170  & Est.3 & 1{,}59 & \(1{,}27\times10^{6}\) & 19{,}96 \\
+        8--9 & 5870  & 375  & Est.3 & 1{,}59 & \(1{,}27\times10^{6}\) & 11{,}83 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+La conducción completa alcanza una longitud aproximada de \(58{,}5 \, \text{km}\), con un desnivel total de 2154 \, m y pérdidas por fricción acumuladas del orden de \(118 \, \text{m}\). Si bien estas pérdidas representan una fracción menor respecto del desnivel geométrico, deben ser consideradas en la definición de la carga de impulsión.
+
+\subsection*{Alturas parciales por estación}
+
+A partir de los resultados por tramo, se determinó la altura total requerida en cada estación de bombeo, obteniéndose los valores de la Tabla \ref{tab:alt_parciales}:
+
+\begin{table}[h]
+    \centering
+    \caption{Alturas de diseño por estación.}
+    \label{tab:alt_parciales}
+    \begin{tabular}{lccc}
+        \hline
+        Estación & \(\sum \Delta z\) [m] & \(\sum h_{f}\) [m] & \(H_{\text{total}}\) [m] \\
+        \hline
+        Estación 1 (2--3, 3--4) & 885 & 52{,}15 & 937{,}1 \\
+        Estación 2 (4--5, 5--6) & 742 & 33{,}28 & 775{,}3 \\
+        Estación 3 (6--7, 7--8, 8--9) & 527 & 32{,}43 & 559{,}4 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Estas alturas sustentan la selección final de siete bombas en la Estación 1, cuatro bombas en la Estación 2 y tres bombas en la Estación 3.
+
+\subsubsection*{Perfil longitudinal del sistema}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{perfil_longitudinal.png}
+    \caption{Perfil longitudinal del trazado y ubicación de estaciones de bombeo.}
+    \label{fig:perfil}
+\end{figure}
+
+El perfil permite visualizar el desnivel total, los túneles, las pendientes y la ubicación estratégica de las estaciones de impulsión.
+
+\subsection*{Curva H--Q de las bombas}
+
+La Figura \ref{fig:curvaHQ} muestra la curva característica H--Q de las bombas Goulds 3600 utilizadas en el diseño.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{curve_HQ.png}
+    \caption{Curva característica H--Q de las bombas Goulds 3600.}
+    \label{fig:curvaHQ}
+\end{figure}
+
+La curva confirma que las bombas operan en zonas eficientes para los caudales requeridos, manteniendo estabilidad en la operación en paralelo.
+
+\subsection*{Verificación estructural por estación}
+
+Se evaluó la presión interna y la tensión circunferencial correspondiente en cada estación, obteniéndose los resultados de la Tabla \ref{tab:espesores}:
+
+\begin{table}[h]
+    \centering
+    \caption{Verificación de espesores y esfuerzos por estación.}
+    \label{tab:espesores}
+    \begin{tabular}{lccccccc}
+        \hline
+        Estación &
+        \(H_{\text{diseño}}\) [m] &
+        \(p\) [bar] &
+        \(e_{\text{req}}\) [mm] &
+        \(e_{\text{adopt}}\) [mm] &
+        Util.\ espesor [\%] &
+        \(\sigma_{\theta}\) [MPa] &
+        \(\sigma_{\text{adm}}\) [MPa] \\
+        \hline
+        Estación 1 & 930     & 91{,}23 & 11{,}31 & 32 & 35{,}36 & 114{,}04 & 322{,}56 \\
+        Estación 2 & 840     & 82{,}40 & 10{,}22 & 50 & 20{,}44 & 65{,}92  & 322{,}56 \\
+        Estación 3 & 656{,}67 & 64{,}42 & 7{,}99  & 70 & 11{,}41 & 36{,}81 & 322{,}56 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+La utilización estructural es baja en todas las estaciones, lo que proporciona un amplio margen de seguridad.
+
+\subsection*{Verificación estructural por tramo}
+
+El diseño incluyó una revisión tramo a tramo para asegurar que la tubería cumpla los requisitos de resistencia en todos los puntos del trazado. La Tabla \ref{tab:esp_tramos} resume los espesores mínimos requeridos y los espesores adoptados:
+
+\begin{table}[h]
+    \centering
+    \caption{Espesores mínimos requeridos y adoptados por tramo.}
+    \label{tab:esp_tramos}
+    \begin{tabular}{lcc}
+        \hline
+        Tramo & \(e_{\text{req}}\) [mm] & \(e_{\text{adopt}}\) [mm] \\
+        \hline
+        2--3 & 11{,}3 & 32 \\
+        3--4 & 11{,}3 & 32 \\
+        4--5 & 10{,}2 & 50 \\
+        5--6 & 10{,}2 & 50 \\
+        6--7 & 8{,}0  & 70 \\
+        7--8 & 8{,}0  & 70 \\
+        8--9 & 8{,}0  & 70 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Estos resultados muestran que el espesor adoptado supera ampliamente el mínimo exigido en todos los tramos, especialmente en los sectores sometidos a mayores presiones internas.
+
+En conjunto, los resultados hidráulicos y estructurales permiten afirmar que el sistema de impulsión propuesto es técnicamente viable y presenta amplios márgenes de seguridad en toda su extensión.
+
+
+
+
+\newpage
+\section{Conclusiones}
+
+El estudio desarrollado permitió evaluar en forma integrada la viabilidad hidráulica y estructural de un sistema de impulsión destinado a recircular 800 \, L/s de agua desde el Tranque Ovejería hasta la planta de procesos de la División Andina, siguiendo el trazado existente de la canaleta de relaves. A partir de la caracterización del trazado, del análisis de las pérdidas de carga y del desnivel total de 2154 \, m, se determinó que la solución mediante tres estaciones de bombeo en serie constituye una alternativa técnica coherente con las condiciones topográficas y operacionales del proyecto.
+
+Desde el punto de vista hidráulico, los resultados muestran que, para el diámetro seleccionado, la velocidad del flujo y el número de Reynolds se mantienen dentro de rangos compatibles con un régimen turbulento plenamente desarrollado, con factores de fricción relativamente uniformes a lo largo de la conducción. Las pérdidas por fricción, si bien no son despreciables, representan una fracción menor en comparación con el desnivel geométrico, lo que refuerza la importancia de una adecuada ubicación y configuración de las estaciones de bombeo. Las alturas parciales obtenidas para cada estación permiten justificar la selección de siete bombas en la Estación 1, cuatro en la Estación 2 y tres en la Estación 3, operando en zonas de eficiencia aceptables según las curvas características de las bombas Goulds 3600.
+
+En cuanto al diseño estructural de la conducción, la evaluación de las presiones internas y de la tensión circunferencial para cada estación y tramo evidencia que los espesores adoptados superan ampliamente los espesores mínimos requeridos por criterio de resistencia. Tanto a nivel global de estación como a nivel de tramo, la utilización de espesor y de esfuerzo se mantiene muy por debajo de la tensión admisible del material, lo que se traduce en amplios márgenes de seguridad frente a las condiciones de operación previstas. Esto confirma que la selección de tubería de acero y de espesores comerciales es adecuada para el servicio considerado.
+
+En conjunto, los análisis realizados permiten concluir que el sistema de impulsión propuesto es técnicamente viable y cumple con los criterios de operación continua, seguridad hidráulica y robustez estructural. La recirculación del caudal de 800 \, L/s desde el Tranque Ovejería hacia la planta de procesos contribuye de manera significativa a la mejora en la eficiencia hídrica de la operación, reduciendo la demanda de agua fresca y alineándose con los objetivos de sostenibilidad y uso responsable del recurso hídrico en la División Andina. Como trabajo futuro, sería recomendable profundizar en el análisis transitorio, incluyendo estudios de golpe de ariete y estrategias de control, así como en la evaluación económica y de riesgo operacional asociada a la implementación del sistema.
+
+\newpage
+\section*{Referencias y Bibliografía}
+
+\begin{itemize}
+
+    \item ASME International. \textit{ASME B31.4: Pipeline Transportation Systems for Liquids and Slurries}. American Society of Mechanical Engineers, 2019.
+
+    \item API – American Petroleum Institute. \textit{API 5L: Specification for Line Pipe}. Forty-fifth Edition, 2018.
+
+    \item Crane Co. \textit{Technical Paper No. 410: Flow of Fluids Through Valves, Fittings, and Pipe}. 2018.
+
+    \item Goulds Pumps. \textit{Modelo 3600 – Multi-Stage, Radially Split Pump: Performance Curves and Technical Specifications}. ITT Goulds, 2022.
+
+    \item Codelco División Andina. \textit{Información topográfica y operacional del sistema de relaves y trazado Tranque Ovejería – Planta Concentradora}. Documentación interna del proyecto. 
+
+    \item Munson, B. R., Young, D. F., Okiishi, T. H. \textit{Fundamentos de Mecánica de Fluidos}. Sexta edición, Wiley, 2010.
+
+    \item White, F. M. \textit{Fluid Mechanics}. Eighth Edition, McGraw-Hill, 2016.
+
+    \item Iturrizaga, L., y colaboradores. \textit{Diseño de Sistemas de Bombeo en Minería de Alta Montaña: Consideraciones Hidráulicas y Estructurales}. Revista de Ingeniería Aplicada a la Minería, 2020.
+
+    \item MOP – Ministerio de Obras Públicas de Chile. \textit{Normas de Diseño para Obras Hidráulicas}. Dirección de Obras Hidráulicas, 2015.
+
+\end{itemize}
 
 
 \end{document}
