@@ -550,31 +550,53 @@ La utilización estructural es baja en todas las estaciones, lo que proporciona 
 
 \subsection*{Verificación estructural por tramo}
 
-El diseño incluyó una revisión tramo a tramo para asegurar que la tubería cumpla los requisitos de resistencia en todos los puntos del trazado. La Tabla \ref{tab:esp_tramos} resume los espesores mínimos requeridos y los espesores adoptados:
+El diseño incluyó una revisión tramo a tramo para asegurar que la tubería cumpla con los requisitos de resistencia establecidos por la normativa. A partir de las presiones internas obtenidas para cada sector del trazado, se determinó el espesor mínimo requerido según el criterio de tensión circunferencial de ASME. La Tabla \ref{tab:esp_tramos} presenta los valores calculados para cada tramo.
 
 \begin{table}[h]
     \centering
-    \caption{Espesores mínimos requeridos y adoptados por tramo.}
+    \caption{Espesores mínimos requeridos por tramo.}
     \label{tab:esp_tramos}
-    \begin{tabular}{lcc}
+    \begin{tabular}{lc}
         \hline
-        Tramo & \(e_{\text{req}}\) [mm] & \(e_{\text{adopt}}\) [mm] \\
+        Tramo & \(e_{\text{req}}\) [mm] \\
         \hline
-        2--3 & 11{,}3 & 32 \\
-        3--4 & 11{,}3 & 32 \\
-        4--5 & 10{,}2 & 50 \\
-        5--6 & 10{,}2 & 50 \\
-        6--7 & 8{,}0  & 70 \\
-        7--8 & 8{,}0  & 70 \\
-        8--9 & 8{,}0  & 70 \\
+        2--3 & 11{,}3 \\
+        3--4 & 11{,}3 \\
+        4--5 & 10{,}2 \\
+        5--6 & 10{,}2 \\
+        6--7 & 8{,}0 \\
+        7--8 & 8{,}0 \\
+        8--9 & 8{,}0 \\
         \hline
     \end{tabular}
 \end{table}
 
-Estos resultados muestran que el espesor adoptado supera ampliamente el mínimo exigido en todos los tramos, especialmente en los sectores sometidos a mayores presiones internas.
+Los resultados indican que los requerimientos de espesor varían entre 8 y 11{,}3 milímetros, dependiendo de la presión interna a la que está sometido cada tramo. Estas diferencias se explican por la distribución del desnivel a lo largo del trazado y por la presión acumulada en los sectores superiores del sistema. La identificación de estos espesores mínimos constituye la base para la posterior selección de espesores comerciales adecuados en la etapa de diseño estructural.
 
-En conjunto, los resultados hidráulicos y estructurales permiten afirmar que el sistema de impulsión propuesto es técnicamente viable y presenta amplios márgenes de seguridad en toda su extensión.
+En conjunto, los resultados obtenidos permiten asegurar que la conducción cuenta con un diseño estructural coherente con las exigencias del proyecto, manteniendo márgenes de seguridad adecuados frente a las presiones de operación esperadas.
 
+\subsection*{Estanques de regulación}
+
+Con el fin de garantizar autonomía operacional ante detenciones momentáneas de las bombas y permitir una adecuada transición hidráulica entre estaciones, se definió la instalación de estanques de regulación en cada una de las estaciones del sistema de impulsión. El criterio de diseño corresponde a un tiempo de autonomía de 30 minutos, equivalente a un volumen de almacenamiento de 1440 m$^3$.
+
+Se adoptó un estanque cilíndrico vertical con altura útil de 5 metros, lo que conduce a un diámetro de aproximadamente 19,15 metros. Estos valores se aplican de manera uniforme en las tres estaciones de bombeo, ya que se optó por un diseño estandarizado que facilite la construcción, operación y mantenimiento del sistema.
+
+\begin{table}[h]
+    \centering
+    \caption{Dimensiones de los estanques de regulación.}
+    \label{tab:estanques}
+    \begin{tabular}{ccc}
+        \toprule
+        Volumen [m$^3$] & Altura [m] & Diámetro [m] \\
+        \midrule
+        1440 & 5 & 19,15 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+En el caso de las Estaciones 2 y 3, la incorporación de variadores de frecuencia permite modular el caudal y ajustar la entrega de energía hidráulica en función de la demanda instantánea del sistema. Esto reduce significativamente las oscilaciones de caudal entre etapas, lo que abre la posibilidad de disminuir el volumen de los estanques en estas estaciones sin comprometer la estabilidad operativa. 
+
+Aun así, para efectos del diseño preliminar se optó por mantener un volumen estándar de 1440 m$^3$ en todas las estaciones, adoptando un enfoque conservador y coherente con los criterios de seguridad del proyecto.
 
 
 
